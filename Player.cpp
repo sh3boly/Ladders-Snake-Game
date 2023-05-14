@@ -37,6 +37,9 @@ int Player::GetTurnCount() const
 {
 	return turnCount;
 }
+void Player::setTurnCount(int turns) {
+	turnCount = turns;
+}
 
 // ====== Drawing Functions ======
 
@@ -106,4 +109,24 @@ void Player::AppendPlayerInfo(string & playersInfo) const
 	playersInfo += "P" + to_string(playerNum) + "(" ;
 	playersInfo += to_string(wallet) + ", ";
 	playersInfo += to_string(turnCount) + ")";
+}
+
+void Player::setNextTurn(bool turn)
+{
+	nextTurn = turn;
+}
+
+void Player::setIsJailed(bool jailed)
+{
+	isJailed = jailed;
+}
+
+void Player::setJailedTurns(int turns)
+{
+	jailedTurns = turns;
+}
+
+void Player::setOwnedCard(int cardNumber)
+{
+	ownedCardNumber = cardNumber;
 }

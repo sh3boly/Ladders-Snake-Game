@@ -1,32 +1,32 @@
-#include "CardNine.h"
+#include "CardTen.h"
 
-CardNine::CardNine(const CellPosition& pos) : Card(pos)
+CardTen::CardTen(const CellPosition& pos) : Card(pos)
 {
-	cardNumber = 9;
+	cardNumber = 10;
 }
 
-int CardNine::getFees()
+int CardTen::getFees()
 {
 	return Fees;
 }
 
-bool CardNine::getBought()
+bool CardTen::getBought()
 {
 	return Bought;
 }
 
-void CardNine::ReadCardParameters(Grid* pGrid)
+void CardTen::ReadCardParameters(Grid* pGrid)
 {
 	Input* pIn = pGrid->GetInput();
 	Output* pOut = pGrid->GetOutput();
-	pOut->PrintMessage("Enter the price of Card 9: ");
+	pOut->PrintMessage("Enter the price of Card 10: ");
 	cardPrice = pIn->GetInteger(pOut);
-	pOut->PrintMessage("Enter the Fees of Card 9: ");
+	pOut->PrintMessage("Enter the Fees of Card 10: ");
 	Fees = pIn->GetInteger(pOut);
 
 }
 
-void CardNine::Apply(Grid* pGrid, Player* pPlayer)
+void CardTen::Apply(Grid* pGrid, Player* pPlayer)
 {
 	Card::Apply(pGrid, pPlayer);
 	Input* pIn = pGrid->GetInput();
@@ -35,7 +35,7 @@ void CardNine::Apply(Grid* pGrid, Player* pPlayer)
 		ReadCardParameters(pGrid);
 	}
 	if (!Bought) {
-		pOut->PrintMessage("Do you want to buy card 11?(Y/N) ");
+		pOut->PrintMessage("Do you want to buy card 10?(Y/N) ");
 		string Buy = pIn->GetSrting(pOut);
 		if (Buy == "Y") {
 			pPlayer->SetWallet(pPlayer->GetWallet() - cardPrice);
@@ -48,10 +48,10 @@ void CardNine::Apply(Grid* pGrid, Player* pPlayer)
 		pOut->PrintMessage("You stepped into a player's station " + to_string(Fees) + " is deducted.");
 		pPlayer->SetWallet(pPlayer->GetWallet() - Fees);
 		pOwner->SetWallet(pOwner->GetWallet() + Fees);
-
+		
 	}
 }
 
-CardNine::~CardNine()
+CardTen::~CardTen()
 {
 }

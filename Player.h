@@ -16,7 +16,10 @@ class Player
 	int turnCount;         // a counter that starts with 0, is incremented with each dice roll
 	                       // and reset again when reached 3
 	                       // it is used to indicate when to move and when to add to your wallet
-	
+	bool isJailed;
+	int jailedTurns;
+	bool nextTurn;
+	int ownedCardNumber;	
 public:
 
 	Player(Cell * pCell, int playerNum); // Constructor making any needed initializations
@@ -47,6 +50,11 @@ public:
 	
 	void AppendPlayerInfo(string & playersInfo) const; // Appends player's info to the input string, 
 	                                                   // for example: P0(wallet, turnCount)
+	void setNextTurn(bool turn);
 
+	void setIsJailed(bool jailed);
+	void setJailedTurns(int turns);
+	void setOwnedCard(int cardNumber);
+	void setTurnCount(int turns);
 };
 
