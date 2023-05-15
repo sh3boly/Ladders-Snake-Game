@@ -17,7 +17,6 @@ void CardTwelve::Apply(Grid* pGrid, Player* pPlayer)
 	Input* pIn = pGrid->GetInput();
 	pOut->PrintMessage("You landed on Card Twelve, your most expensive station will be transfer to the player with the least wallet!");
 	pPlayer = pGrid->GetCurrentPlayer();
-	()
 
 }
 

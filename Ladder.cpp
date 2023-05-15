@@ -1,5 +1,7 @@
 #include "Ladder.h"
 
+
+
 Ladder::Ladder(const CellPosition & startCellPos, const CellPosition & endCellPos) : GameObject(startCellPos)
 {
 	this->endCellPos = endCellPos;
@@ -26,6 +28,17 @@ void Ladder::Apply(Grid* pGrid, Player* pPlayer)
 	// 2- Apply the ladder's effect by moving the player to the endCellPos
 	//    Review the "pGrid" functions and decide which function can be used for that
 	
+}
+
+void Ladder::Load(ifstream& Infile, enum Type)
+{
+}
+
+void Ladder::Save(ofstream& OutFile, enum Type)
+{
+	if (Type == LaddersType) {
+
+	}
 }
 
 CellPosition Ladder::GetEndPosition() const

@@ -26,7 +26,7 @@ void CardEight::Apply(Grid* pGrid, Player* pPlayer)
 	pay = pIn->GetSrting(pOut);
 	if (pay == "Y") {
 		pPlayer->SetWallet(pPlayer->GetWallet() - Fees);
-		pPlayer->setOwnedCard(cardNumber);
+
 	}
 	else {
 		pPlayer->setIsJailed(true);

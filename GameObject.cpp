@@ -11,6 +11,12 @@ CellPosition GameObject::GetPosition() const
 	return position;
 }
 
+enum ObjectType {
+	LaddersType,
+	SnakesType,
+	CardsType
+};
+
 GameObject::~GameObject()
 {
 }
