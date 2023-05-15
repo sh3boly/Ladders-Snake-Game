@@ -30,11 +30,11 @@ void Ladder::Apply(Grid* pGrid, Player* pPlayer)
 	
 }
 
-void Ladder::Load(ifstream& Infile, enum Type)
+void Ladder::Load(ifstream& Infile, ObjectType Type)
 {
 }
 
-void Ladder::Save(ofstream& OutFile, enum Type)
+void Ladder::Save(ofstream& OutFile, ObjectType Type)
 {
 	if (Type == LaddersType) {
 
